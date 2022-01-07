@@ -12,7 +12,9 @@ const Score2=document.getElementById('score-2');
 const Game=Array.from(document.getElementsByClassName('game'));
 let Restart=document.querySelector('#restart');
 let isgameover=false;
+let line=document.querySelector('.line');
 let turn ='X';
+//let Info=document.getElementsByClassName('gameinfo');
 let gameover=new Audio('gameover.mp3');
 let Tiny=new Audio('ting.mp3');
 //window.onload=FirstPage.style.display='block';
@@ -133,11 +135,12 @@ Restart.addEventListener('click',()=>
     turn='X';
     Score1.innerText='0';
     Score2.innerText='0';
-
+     isgameover=false;
     //restet start page
     gameover.pause();
-    document.querrySelector('.line')[0].style.display='none';
-    document.querrySelector('.line')[0].style.width=0;
-    document.getElementsByClassName('gameinfo').getElementsByTagName('span')[0].innerText='The turn is of ' +turn;
-    document.querySelector('.imgbox').getElementsByTagName('img')[0].style.width = "0px"
-})
+    line.style.display='none';
+    line.style.width='0px';
+    
+    document.getElementsByClassName('info')[0].innerText='The turn is of X' ;
+    document.getElementsByTagName('img')[0].style.display = "none";
+});
